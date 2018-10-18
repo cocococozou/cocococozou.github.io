@@ -5,3 +5,19 @@ title: "Holy cow!"
 ### I have a webpage!
 
 And I can put all kinds of stuff on it!
+
+i can add additional text :
+
+i *could* write some code... 
+
+### add some links 
+
+i like [search things on internet](https://www.google.com)
+
+i like link directly to my [about page](about.html)
+
+###picture of me 
+
+i'm awesome! 
+
+<img src="./images/me.png" style="width:75%">
