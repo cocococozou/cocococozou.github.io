@@ -16,5 +16,5 @@ I am awesome!
 
 ###Three pictures of problem 2
 
-[here](threeplots.html) is the three plots from problem 2
+[Here](threeplots.html) is the three plots from problem 2.
 
