@@ -11,4 +11,3 @@ navbar:
       href: http://github.com/cocococozou/
 output:
   html_document:
-  theme: journal
