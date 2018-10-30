@@ -1,0 +1,101 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+## Loading required package: viridisLite
+library(p8105.datasets)
+
+library(plotly)
+data("instacart")
+data("ny_noaa")
+data("rest_inspec")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ny_noaa_df= ny_noaa %>% 
+  separate(date, into = c("year","month","date"),sep = "-") %>% 
+  janitor::clean_names() %>% 
+  mutate(tmin = as.numeric(tmin),
+         tmax = as.numeric(tmax),
+         id = as.factor(id),
+         tmin = tmin * 0.1,
+         tmax = tmax * 0.1) 
+
+p1 <- ny_noaa_df %>% 
+  group_by(year, month) %>% 
+  mutate(precip_mean = mean(prcp, na.rm = T)) %>% 
+  distinct(precip_mean) %>% 
+  ggplot(aes(x = precip_mean)) + geom_histogram()
+
+ggplotly(p1)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+
+
+mean_ave_df = ny_noaa_df %>% 
+  mutate(year = as.numeric(year),
+         month = as.factor(month)) %>% 
+  filter(month=="07" | month == "01") %>% 
+  group_by(month,year,id) %>% 
+  filter(!is.na(tmax) & !is.na(tmin)) %>% 
+  mutate(ave_max = mean(tmax)) %>% 
+  distinct(id,year,ave_max)
+  
+plot_names <- c("01" = "Januarary", "07" = "July")
+
+p2<- mean_ave_df%>%
+  ggplot(aes(x = factor(year), y = ave_max)) + 
+  geom_boxplot(alpha = 0.5) +
+  facet_grid(~month, labeller = as_labeller(plot_names))+
+  viridis::scale_fill_viridis(discrete = TRUE)+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, hjust = 1))
+
+ggplotly(p2)
+
+```
+
+### Chart C
+
+```{r}
+ny_noaa_df= ny_noaa %>% 
+  separate(date, into = c("year","month","date"),sep = "-") %>% 
+  janitor::clean_names() %>% 
+  mutate(tmin = as.numeric(tmin),
+         tmax = as.numeric(tmax),
+         id = as.factor(id),
+         tmin = tmin * 0.1,
+         tmax = tmax * 0.1) 
+
+ d <- ggplot(ny_noaa_df, aes(tmax,tmin))
+p3 =  d + geom_hex(bins = 15) + 
+  theme(legend.position = "right")+
+  ggtitle("Tmax vs Tmin")+
+  labs(
+    caption = "For the whole data set"
+  )
+
+ggplotly(p3)
+
+```
+

@@ -18,6 +18,12 @@ i like link directly to my [about page](about.html)
 
 ###picture of me 
 
+###three pictures of problem 2
+
+[here](threeplots.html) is the three plots from problem 2
+
 i'm awesome! 
 
 <img src="./images/me.png" style="width:75%">
+
+my code is [here](code.html)
