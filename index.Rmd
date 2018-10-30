@@ -1,29 +1,20 @@
 ---
-title: "Holy cow!"
+title: "Xiaoke (Coco) Zou"
 ---
 
-### I have a webpage!
+### About me
 
-And I can put all kinds of stuff on it!
-
-i can add additional text :
-
-i *could* write some code... 
-
-### add some links 
-
-i like [search things on internet](https://www.google.com)
-
-i like link directly to my [about page](about.html)
-
-###picture of me 
-
-###three pictures of problem 2
-
-[here](threeplots.html) is the three plots from problem 2
-
-i'm awesome! 
+I am a first year Biostatistics graduate student at Mailman Public Health. I obtained my Bachelor degree in Chemical Engineering from UCLA. My linkedin profile is [here](https://www.linkedin.com/in/xiaoke-zou-8920a5b8/). 
 
 <img src="./images/me.png" style="width:75%">
 
-my code is [here](code.html)
+I am awesome!
+
+###Resume
+[Here](Resume.html) is my professional resume. 
+
+
+###Three pictures of problem 2
+
+[here](threeplots.html) is the three plots from problem 2
+

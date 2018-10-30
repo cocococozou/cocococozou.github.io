@@ -1,0 +1,89 @@
+---
+title: "XIAOKE (COCO) ZOU"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+####792 Columbus Ave, New York, New York
+####Tel: 424-365-2099 | Email: Zouxiaoke@hotmail.com
+
+###Education
+
+####Columbia University, Mailman School of Public Health                        
+
+#####Master of Science in Biostatistics
+
+Expected Graduation: June 2020
+
+Related Courses: Data Science, Biostatistical Methods, Epidemiology
+
+
+####University of California, Los Angeles (UCLA) 
+####Henry Samueli School of Engineering and Applied Science 
+
+Sep 2014-Jun 2018
+
+               
+#####Bachelor of Science in Chemical Engineering, Biomolecular Option
+
+Related Courses: Computer Science, Algorithms and Complexity, Probability, Linear Algebra
+
+###Work Experience
+
+####Sanofi                                                                        
+Shanghai, China, Summer 2015
+
+#####Summer Intern, Research & Development Department              
+
+-	Developed weekly PowerPoint of progress reports of different departments to enhance communication inside the company
+
+-	Reorganized the file system to improve the efficiency of data retrieved in the R&D Department
+
+-	Analyzed data of cancer patient and proofread the data analysis report for the purpose of understanding of origins of different types of cancer and presented to the manager
+
+-	Obtained overall knowledge of the operations of the pharmaceutical industry  
+
+###Academic Research
+
+####Chemical and Biomolecular Department of UCLA
+
+#####A STUDY ON METABOLISM OF CELLS.    
+
+March 2016–February 2018
+
+-	Assisted in developing mathematical tools by using MATLAB for guiding engineering design 
+
+-	Collected and analyzed daily data of cell growth to interpret the metabolism of E.coli
+
+-	Presented monthly progress reports using PowerPoint to the Ph.D supervisor 
+
+-	Researched and collected trending scientific news to the senior analyst
+
+#####A STUDY ON CARBON DIOXIDE FIXATION   
+
+March 2016–February 2018
+
+-	Analyzed data on carbon fixation enzyme essays and invested in further research method 
+
+-	Conducted troubleshooting in a chain of over 30 types of enzyme essays and manipulated parameters in reactions to improve reaction efficiency
+
+-	Accurately followed research protocols and performed cell growth inoculation and the following protein over-expression and purification 
+
+###Community Involvement
+
+####Los Angeles International Culture Film Festival                                 
+#####Publicity Director                                            
+Los Angeles, Fall 2015
+
+-	Administered publication on websites and social media outlets, including official website and Facebook 
+
+-	Communicated with contenders about rules of rating and filtering their film entries
+
+###Skills
+
+Language Skills: Fluent English, Native Mandarin
+
+Computer Skills: C++, MATLAB, LaTeX, R, Microsoft Office (Word, Excel, PowerPoint), Photoshop, Final Cut Pro
