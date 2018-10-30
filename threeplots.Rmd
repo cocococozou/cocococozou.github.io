@@ -45,15 +45,20 @@ mean_ave_df = ny_noaa_df %>%
   
 plot_names <- c("01" = "Januarary", "07" = "July")
 
-p2<- mean_ave_df%>%
+p1<- mean_ave_df%>%
   ggplot(aes(x = factor(year), y = ave_max)) + 
   geom_boxplot(alpha = 0.5) +
   facet_grid(~month, labeller = as_labeller(plot_names))+
   viridis::scale_fill_viridis(discrete = TRUE)+
   theme(legend.position = "none",
-        axis.text.x = element_text(angle = 90, hjust = 1))
+        axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(
+    title = "Average temperature in January and in July in each station across years",
+    x = "Year",
+    y = "Average Temperature"
+  )
 
-ggplotly(p2)
+ggplotly(p1)
 ```
 
 Column {data-width=350}
@@ -61,21 +66,27 @@ Column {data-width=350}
 
 ### Chart B
 
-```{r}
+```{r message=FALSE}
 
 
-p1 <- ny_noaa_df %>% 
+p2 <- ny_noaa_df %>% 
   group_by(year, month) %>% 
   mutate(precip_mean = mean(prcp, na.rm = T)) %>% 
   distinct(precip_mean) %>% 
-  ggplot(aes(x = precip_mean)) + geom_histogram()
+  ggplot(aes(x = precip_mean)) + geom_histogram()+
+  labs(
+    title = "Average precipitation of each month across years",
+    x = "Count",
+    y = "Mean of precipitation"
+  )
+  
 
-ggplotly(p1)
+ggplotly(p2)
 ```
 
 ### Chart C
 
-```{r}
+```{r warning=FALSE}
 ny_noaa_df= ny_noaa %>% 
   separate(date, into = c("year","month","date"),sep = "-") %>% 
   janitor::clean_names() %>% 
@@ -88,10 +99,7 @@ ny_noaa_df= ny_noaa %>%
  d <- ggplot(ny_noaa_df, aes(tmax,tmin))
 p3 =  d + geom_hex(bins = 15) + 
   theme(legend.position = "right")+
-  ggtitle("Tmax vs Tmin")+
-  labs(
-    caption = "For the whole data set"
-  )
+  ggtitle("Tmax vs Tmin")
 
 ggplotly(p3)
 
