@@ -34,24 +34,6 @@ ny_noaa_df= ny_noaa %>%
          tmin = tmin * 0.1,
          tmax = tmax * 0.1) 
 
-p1 <- ny_noaa_df %>% 
-  group_by(year, month) %>% 
-  mutate(precip_mean = mean(prcp, na.rm = T)) %>% 
-  distinct(precip_mean) %>% 
-  ggplot(aes(x = precip_mean)) + geom_histogram()
-
-ggplotly(p1)
-```
-
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r}
-
-
-
 mean_ave_df = ny_noaa_df %>% 
   mutate(year = as.numeric(year),
          month = as.factor(month)) %>% 
@@ -72,7 +54,23 @@ p2<- mean_ave_df%>%
         axis.text.x = element_text(angle = 90, hjust = 1))
 
 ggplotly(p2)
+```
 
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+
+p1 <- ny_noaa_df %>% 
+  group_by(year, month) %>% 
+  mutate(precip_mean = mean(prcp, na.rm = T)) %>% 
+  distinct(precip_mean) %>% 
+  ggplot(aes(x = precip_mean)) + geom_histogram()
+
+ggplotly(p1)
 ```
 
 ### Chart C
