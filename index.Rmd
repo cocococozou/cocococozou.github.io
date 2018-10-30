@@ -4,7 +4,7 @@ title: "Xiaoke (Coco) Zou"
 
 ### About me
 
-I am a first year Biostatistics graduate student at Mailman Public Health. I obtained my Bachelor degree in Chemical Engineering from UCLA. My linkedin profile is [here](https://www.linkedin.com/in/xiaoke-zou-8920a5b8/). 
+I am a first year Biostatistics graduate student at Mailman Public Health. I obtained my Bachelor degree in Chemical Engineering from UCLA. 
 
 <img src="./images/me.png" style="width:75%">
 
