@@ -11,7 +11,7 @@ I am a second year Biostatistics graduate student at Columbia University, Mailma
 
 I am a qualified statistical programmer candidate with extensive understanding of machine learning, data mining, clinical trials analysis, and big data analytics and related workflow.
 
-I've completed numbers of academic projects related to clinical trails, including [the study the incident rate of TB among Type II diabetes patients](Resume.html), [NAS score accuracy](threeplots.html) and [gene expression changes among brain cells of mice](threeplots.html]. 
+I've completed numbers of academic projects related to clinical trails, including [the study the incident rate of TB among Type II diabetes patients](Resume.html), [NAS score accuracy](Resume.html) and [gene expression changes among brain cells of mice](Resume.html). 
 
 
 <img src="./images/me.png" style="width:50%">
@@ -21,8 +21,4 @@ I've completed numbers of academic projects related to clinical trails, includin
 ###Resume
 [Here](Resume.html) is my professional resume. 
 
-
-###Three pictures of problem 2
-
-[Here](threeplots.html) is the three plots from problem 2.
 
