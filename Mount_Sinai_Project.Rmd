@@ -1,0 +1,10 @@
+---
+title: "XIAOKE (COCO) ZOU"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<img src="./images/mount_sinai_poster.pdf" style="width:100%">
