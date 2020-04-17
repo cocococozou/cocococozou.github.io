@@ -3,6 +3,8 @@ title: "Xiaoke (Coco) Zou"
 ---
 
 ### About me
+
+
 I graduated from UCLA, major in Chemical Engineering, Biomolecular Option. 
 
 I worked in Biotechnology lab for more than two years, focusing on free carbon fixation and enzyme assay researches.
@@ -11,15 +13,13 @@ I am a second year Biostatistics graduate student at Columbia University, Mailma
 
 I am a qualified statistical programmer candidate with extensive understanding of machine learning, data mining, clinical trials analysis, and big data analytics and related workflow.
 
-I've completed numbers of academic projects related to clinical trails, including [the study the incident rate of TB among Type II diabetes patients](https://cocococozou.github.io/dmvstb.github.io/), [NAS score accuracy](Resume.html) and [gene expression changes among brain cells of mice](Mount_Sinai_Project.html). 
-
+I've completed numbers of academic projects related to clinical trails, including [the study the incident rate of TB among Type II diabetes patients](https://cocococozou.github.io/dmvstb.github.io/), [NAS score accuracy](NAS.html) and [gene expression changes among brain cells of mice](Mount_Sinai_Project.html). 
 
 <img src="./images/me.png" style="width:50%">
 
 
 ###Resume
-[Here](Resume.html) is my professional resume. 
+[Here](myresume.html) is my professional resume. 
 
-maybe some change?
 
 

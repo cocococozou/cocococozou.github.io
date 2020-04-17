@@ -1,0 +1,21 @@
+---
+title: "Reproducibility of NAS Score and Correlation with Steatohepatitis Diagnosis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+####Background
+
+Nonalcoholic fatty liver disease(NAFLD) is characterized by hepatic steatosis in the absence of a history of significant alcohol use  or other known liver disease.  Nonalcoholic steatohepatitis (NASH) is the progressive form of NAFLD. 
+
+The Nonalcoholic fatty liver disease Activity Score (NAS) is commonly used in therapeutic trials to evaluate changes in Nonalcoholic fatty liver disease (NAFLD). 
+
+
+###Research Question
+
+To investigate the interobserver reproducibility of the NAS score, and the variation between final diagnosis and NAS score, among subspecialist liver-GI pathologists at a single academic medical center.
+
+###
