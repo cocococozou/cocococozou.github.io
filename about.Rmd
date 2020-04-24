@@ -1,7 +1,27 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-### About this site
+```{r,include=F}
+library("vembedr")
 
-This is homework 7 from Data Science I from Mailman Public Health, including a professional introduction of Xiaoke Coco Zou and a three-plots dashboard.
+```
+
+### Where I come from
+My name is Xiaoke (Coco) Zou. I come from Nanjing, China. I graduated from UCLA, major in Chemical Engineering, Biomolecular Option. I worked in Biotechnology lab for more than two years, focusing on free carbon fixation and enzyme assay researches.
+
+<img src="./images/lab.jpg" style="width:47%"><img src="./images/me.png" style="width:50%">
+
+###What Do I like
+
+I like outdoor activities including hiking and camping. I also enjoy cooking and baking. 
+
+<img src="./images/mehiking.jpg" style="width:49%"><img src="./images/mehiking2.jpg" style="width:50%">
+
+<img src="./images/mejumping.jpg" style="width:49%"><img src="./images/mecooking.jpg" style="width:49%">
+
+I learnt how to play piano when I was a kid. 
+
+```{r echo=FALSE}
+embed_url("https://youtu.be/ywJhy2zp4To")
+```

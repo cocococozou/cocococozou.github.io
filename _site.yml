@@ -5,6 +5,8 @@ navbar:
   right:
     - icon: fa-envelope fa-lg
       href: mailto:<xz2809@cumc.columbia.edu>
+    - text: "About"
+      href: about.html
     - icon: fa-github fa-lg
       href: http://github.com/cocococozou/
     - icon: fa-linkedin fa-lg
