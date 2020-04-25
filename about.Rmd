@@ -25,3 +25,8 @@ I learnt how to play piano when I was a kid.
 ```{r echo=FALSE}
 embed_url("https://youtu.be/ywJhy2zp4To")
 ```
+
+I have a lovely totoro. His name is Bubble. 
+
+<img src="./images/tuotuo1.jpg" style="width:37%"><img src="./images/tuotuo2.jpg" style="width:49%">
+

@@ -12,7 +12,7 @@
 
 
 
-<title>XIAOKE (COCO) ZOU</title>
+<title>Quantification of Cocaine-Induced Cell-Type Specific Gene Expression Changes</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +20,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -250,6 +253,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -257,6 +323,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -283,6 +359,9 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
+  <a href="about.html">About</a>
+</li>
+<li>
   <a href="http://github.com/cocococozou/">
     <span class="fa fa-github fa-lg"></span>
      
@@ -303,15 +382,47 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">XIAOKE (COCO) ZOU</h1>
+<h1 class="title toc-ignore">Quantification of Cocaine-Induced Cell-Type Specific Gene Expression Changes</h1>
 
 </div>
 
 
-<p><img src="images/mount_sinai_poster.pdf" style="width:100%"></p>
+<div id="why-am-i-doing-this" class="section level3">
+<h3>Why am I doing this?</h3>
+<p>Next-generation sequencing (NGS) technologies has provided inspiring results of complex biological systems. Single cell RNA analysis, focusing on the characterization of individual sells, could allow researchers to explore potentially new and unpredicted effects of various factors on subjects.</p>
+<p>Single cell RNA sequencing was performed in NAc from Rat that treated with cocaine or saline self-administration and then followed with cocaine or saline challenge. The goal of this project is to quantify cocaine-induced cell-type specific gene expression changes.</p>
+<p><img src="images/ngs1.jpg" style="width:50%"><img src="images/ngs2.png" style="width:50%"></p>
+</div>
+<div id="what-have-i-done" class="section level3">
+<h3>What Have I done?</h3>
+<p>Quality control was first performed to avoid technical noise, which may obscure the biological information of downstream analysis. The after-QC cells were then clustered based on the SC3 algorithm. Three cell types were identified: Microglia, Neuron and Oligodendrocyte by cross overlapping with the data from Top 50 Cell Type-Specific Genes provided by Gokce. Then hurdle model was applied to each cell type to quantify the significant change of stimulation, treatment and interaction, shown in the following equation. Rank–rank hypergeometric overlap graphical maps(RRHO), heatmaps of significant genes of four cell types, and Gene Ontology terms plots were used to visualize the results.</p>
+<p><span class="math display">\[
+log(exp counts) = cngeneson+stimulation+treatment+treatment*stimulation
+\]</span></p>
+</div>
+<div id="what-have-i-found" class="section level3">
+<h3>What have I found?</h3>
+<div id="cell-type-determination" class="section level4">
+<h4>Cell Type Determination</h4>
+<p>The SC3 algorithm were performed. A total number of five clusters were determined with a silhouette index of 0.68. The clusters were then overlapped with the Top 50 Cell Type-Specific Genes provided by Gokce. The fourth type was identified as Astrocytes . However, from the UMAP map, the fourth cluster showed similarities with the second unknown cluster. Furthermore, the fifth cluster showed discernibly two parts. Therefore, the fifth cluster were then further divided into two clusters, one is identified as Neuron and the other one was identified as unknown. Three cell types can be then identified as Microglia, Oligodendrocyte, and Neuron.</p>
+<p><img src="images/celltype.png" style="width:50%"></p>
+</div>
+<div id="rrho" class="section level4">
+<h4>RRHO</h4>
+<p>The rank-rank overlap analysis showed that there was strong correlation at the down - down regulated differential genes between oligodendrocyte and microglia for the stimulation and treatment term. Furthermore, for the interaction term there exist a strong consistency at the up – up regulated differential genes. There is no significant consistency showing between oligodendrocyte and microglia with neuron.</p>
+<p><img src="images/RRHO1.png" style="width:33%"><img src="images/RRHO1.png" style="width:33%"><img src="images/RRHO3.png" style="width:33%"></p>
+</div>
+<div id="gene-ontology" class="section level4">
+<h4>Gene Ontology</h4>
+<p>For Microglia, the top five gene ontology terms include: mRNA processing, regulation of proteasomal protein catabolic process, mRNA polyadenylation, RNA splicing and positive regulation. For Neuron, cerebral cortex development, hippocampus development, positive regulation of synapse assembly, RNA processing and positive regulation of proteasomal protein catabolic process. For Oligodendrocyte, GO enrichment analysis showed that nucleosome assembly, aging, cellular response to DNA damage stimulus, substantia nigra development and cell–cell adhesion are the top five significant terms.</p>
+<p><img src="images/GO1.png" style="width:33%"><img src="images/GO1.png" style="width:33%"><img src="images/GO3.png" style="width:33%"></p>
+</div>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -344,6 +455,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
