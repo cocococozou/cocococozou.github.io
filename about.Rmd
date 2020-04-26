@@ -10,23 +10,27 @@ library("vembedr")
 ### Where I come from
 My name is Xiaoke (Coco) Zou. I come from Nanjing, China. I graduated from UCLA, major in Chemical Engineering, Biomolecular Option. I worked in Biotechnology lab for more than two years, focusing on free carbon fixation and enzyme assay researches.
 
-<img src="./images/lab.jpg" style="width:47%"><img src="./images/me.png" style="width:50%">
+<img src="./images/lab.jpg" style="width:60%">
+
+
 
 ###What Do I like
 
-I like outdoor activities including hiking and camping. I also enjoy cooking and baking. 
+#####Hiking and Camping
+
+#####Cooking and Baking
 
 <img src="./images/mehiking.jpg" style="width:49%"><img src="./images/mehiking2.jpg" style="width:50%">
 
 <img src="./images/mejumping.jpg" style="width:49%"><img src="./images/mecooking.jpg" style="width:49%">
 
-I learnt how to play piano when I was a kid. 
+#####Piano Playing 
 
 ```{r echo=FALSE}
 embed_url("https://youtu.be/ywJhy2zp4To")
 ```
 
-I have a lovely totoro. His name is Bubble. 
+#####Lovely Totoro, Bubble
 
 <img src="./images/tuotuo1.jpg" style="width:37%"><img src="./images/tuotuo2.jpg" style="width:49%">
 

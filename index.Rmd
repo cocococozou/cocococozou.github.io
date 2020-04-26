@@ -8,6 +8,8 @@ I am a second year Biostatistics graduate student at Columbia University, Mailma
 
 I am a qualified statistical programmer candidate with extensive understanding of machine learning, data mining, clinical trials analysis, and big data analytics and related workflow. I am highly adept at project coordination and logistics, qualitative and quantitative data collection, literature review, and data analysis. 
 
+<img src="./images/me1.jpg" style="width:50%"><img src="./images/me2.jpg" style="width:50%">
+
 
 ###Professional Experience 
 
