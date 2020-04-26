@@ -12,7 +12,7 @@
 
 
 
-<title>Xiaoke (Coco) Zou</title>
+<title>Movie Recommendation System</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +20,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -250,6 +253,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -257,6 +323,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -306,33 +382,29 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Xiaoke (Coco) Zou</h1>
+<h1 class="title toc-ignore">Movie Recommendation System</h1>
 
 </div>
 
 
-<div id="about-me" class="section level3">
-<h3>About me</h3>
-<p>I am a second year Biostatistics graduate student at Columbia University, Mailman School of Public Health.</p>
-<p>I am a qualified statistical programmer candidate with extensive understanding of machine learning, data mining, clinical trials analysis, and big data analytics and related workflow. I am highly adept at project coordination and logistics, qualitative and quantitative data collection, literature review, and data analysis.</p>
-<p><img src="images/me1.JPG" style="width:50%"><img src="images/me2.JPG" style="width:50%"></p>
+<div id="why-am-i-doing-this" class="section level3">
+<h3>Why am I doing this?</h3>
+<p>In product/service selling companies, a good recommendation system would significantly increase the user experience, improve customer retention and therefore increase the revenue. Kaggle posted an ensemble of data collected from TMDB, GroupLens and MovieLens in order to narrate the history and the story of Cinema and use this metadata to build various types of Recommendation Systems Our goal is to build a recommendation model based on that, and recommend personalized films for each user based on their previous activities.</p>
 </div>
-<div id="professional-experience" class="section level3">
-<h3>Professional Experience</h3>
-<p>I’ve completed numbers of academic projects related to clinical trails, including</p>
-<p><a href="Mount_Sinai_Project.html">Gene Expression Changes Among Brain Cells of Mice</a></p>
-<p><a href="https://cocococozou.github.io/dmvstb.github.io/">The study the incident rate of TB among Type II diabetes patients</a></p>
-<p><a href="NAS.html">NAS score accuracy</a></p>
-<p>The projects I’ve done not only include clinical trail analysis, but also include big data analytics relating to machine learning and data mining.</p>
-<p><a href="movie_recommendation.html">Movie Recommendation System</a></p>
+<div id="what-have-i-done" class="section level3">
+<h3>What Have I done?</h3>
+<p><img src="images/pipeline.pdf" style="width:70%"></p>
+<p><img src="images/model.pdf" style="width:70%"></p>
 </div>
-<div id="resume" class="section level3">
-<h3>Resume</h3>
-<p><a href="myresume.html">Here</a> is my professional resume.</p>
+<div id="what-do-i-create" class="section level3">
+<h3>What Do I create?</h3>
+<p><img src="images/interface.pdf" style="width:70%"></p>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -365,6 +437,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

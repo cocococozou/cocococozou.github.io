@@ -1,0 +1,37 @@
+---
+title: "Movie Recommendation System"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r,include=F}
+require(rgdal)
+require(tidyverse)
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "80%"
+)
+
+library("htmltools")
+library("vembedr")
+
+```
+
+### Why am I doing this? 
+
+In product/service selling companies, a good recommendation system would significantly increase the user experience, improve customer retention and therefore increase the revenue. 
+Kaggle posted an ensemble of data collected from TMDB, GroupLens and MovieLens in order to narrate the history and the story of Cinema and use this metadata to build various types of Recommendation Systems 
+Our goal is to build a recommendation model based on that, and recommend personalized films for each user based on their previous activities. 
+
+###What Have I done?
+
+<img src="./images/pipeline.pdf" style="width:70%">
+
+<img src="./images/model.pdf" style="width:70%"> 
+
+###What Do I create?
+
+<img src="./images/interface.pdf" style="width:70%">
