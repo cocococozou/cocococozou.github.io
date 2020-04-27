@@ -35,7 +35,7 @@ Single cell RNA sequencing was performed in cells from Rat that treated with coc
 
 Quality control was first performed to avoid technical noise, which may obscure the biological information of downstream analysis.
 
-* Remove cells that had a total counts of RNA molecules smaller than 2000, a total number of unique genes smaller than 1000, and the cells with percent of mitochondria genes larger than 15% were removed.
+* Remove cells that had a total counts of RNA molecules smaller than 2000, a total number of unique genes smaller than 1000, and with percent of mitochondria genes larger than 15%.
 
 * Remove mitochondrial genes and genes that shared ribosomal protein name according the RGD Genome database
 
