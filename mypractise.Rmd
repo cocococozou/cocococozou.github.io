@@ -1,0 +1,36 @@
+---
+title: "mypractise"
+author: "Coco Zou"
+date: "4/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+name = readline(prompt="Input your name: ")
+```
+
+```{r}
+seq = seq(20, 50)
+mean = mean(seq(20,60))
+sum = sum(seq(51,91))
+vec = sample(-50:50, 10, replace = TRUE)
+```
+
+##for loop
+```{r}
+fibonacci_vec = vector()
+fibonacci_vec[1] <- 1
+fibonacci_vec[2] <- 1
+for(i in 3:10)
+  fibonacci_vec[i] = fibonacci_vec[i- 1] + fibonacci_vec[i-2]
+
+print(fibonacci_vec)
+```
+
+
+
+

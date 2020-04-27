@@ -10,9 +10,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Coco Zou" />
 
 
-<title>Reproducibility of NAS Score and Correlation with Steatohepatitis Diagnosis</title>
+<title>mypractise</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -306,122 +307,29 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Reproducibility of NAS Score and Correlation with Steatohepatitis Diagnosis</h1>
+<h1 class="title toc-ignore">mypractise</h1>
+<h4 class="author">Coco Zou</h4>
+<h4 class="date">4/27/2020</h4>
 
 </div>
 
 
-<div id="please-note-that-because-this-is-a-new-project-that-has-not-been-published-yet.-the-real-data-and-results-are-not-showed-here.-pseudo-data-is-used-instead-to-show-the-analysis-progress." class="section level6">
-<h6>Please note that because this is a new project that has not been published yet. The real data and results are not showed here. Pseudo data is used instead to show the analysis progress.</h6>
-</div>
-<div id="background" class="section level4">
-<h4>Background</h4>
-<p>Nonalcoholic fatty liver disease(NAFLD) is characterized by hepatic steatosis in the absence of a history of significant alcohol use or other known liver disease. Nonalcoholic steatohepatitis (NASH) is the progressive form of NAFLD.</p>
-<p><img src="images/NAS_component.pdf" style="width:100%"></p>
-</div>
-<div id="research-question" class="section level3">
-<h3>Research Question</h3>
-<p>To investigate the interobserver reproducibility of the NAS score, and the variation between final diagnosis and NAS score, among subspecialist liver-GI pathologists at a single academic medical center.</p>
-</div>
-<div id="methods" class="section level3">
-<h3>Methods</h3>
-<div id="data-loadgenerate-and-wrangling" class="section level4">
-<h4>Data Load(Generate) and Wrangling</h4>
-<pre class="r"><code>id &lt;- seq(1, 40, by=1)
+<pre class="r"><code>name = readline(prompt=&quot;Input your name: &quot;)</code></pre>
+<pre><code>## Input your name:</code></pre>
+<pre class="r"><code>seq = seq(20, 50)
+mean = mean(seq(20,60))
+sum = sum(seq(51,91))
+vec = sample(-50:50, 10, replace = TRUE)</code></pre>
+<div id="for-loop" class="section level2">
+<h2>for loop</h2>
+<pre class="r"><code>fibonacci_vec = vector()
+fibonacci_vec[1] &lt;- 1
+fibonacci_vec[2] &lt;- 1
+for(i in 3:10)
+  fibonacci_vec[i] = fibonacci_vec[i- 1] + fibonacci_vec[i-2]
 
-steatosis1 &lt;- sample.int(3, 40, replace = TRUE)
-steatosis2 &lt;- sample.int(3, 40, replace = TRUE)
-steatosis3 &lt;- sample.int(3, 40, replace = TRUE)
-steatosis4 &lt;- sample.int(3, 40, replace = TRUE)
-
-Inflammation1 &lt;- sample.int(3, 40, replace = TRUE)
-Inflammation2 &lt;- sample.int(3, 40, replace = TRUE)
-Inflammation3 &lt;- sample.int(3, 40, replace = TRUE)
-Inflammation4 &lt;- sample.int(3, 40, replace = TRUE)
-
-Bollooning1 &lt;- sample.int(2, 40, replace = TRUE)
-Bollooning2 &lt;- sample.int(2, 40, replace = TRUE)
-Bollooning3 &lt;- sample.int(2, 40, replace = TRUE)
-Bollooning4 &lt;- sample.int(2, 40, replace = TRUE)
-
-mydata &lt;- cbind(id, steatosis1, steatosis2, steatosis3, steatosis4, Inflammation1, Inflammation2, Inflammation3, Inflammation4, Bollooning1, Bollooning2, Bollooning3, Bollooning4) %&gt;% 
-  as.data.frame() %&gt;% 
-  janitor::clean_names() %&gt;% 
-  mutate(nas1 = steatosis1 + inflammation1 + bollooning1,
-         nas2 = steatosis2 + inflammation2 + bollooning2,
-         nas3 = steatosis3 + inflammation3 + bollooning3,
-         nas4 = steatosis4 + inflammation4 + bollooning4)
-
-mydata_long &lt;- mydata %&gt;% 
-  gather(key = &quot;doctor&quot;, value = &quot;nas_score&quot;, nas1, nas2, nas3, nas4) %&gt;% 
-  convert_as_factor(id, doctor) %&gt;% 
-  select(id, doctor, nas_score) %&gt;% 
-  distinct() %&gt;% 
-  mutate(doctor = as.factor(str_replace(doctor, &quot;nas&quot;, &quot;doctor&quot;)))</code></pre>
-</div>
-<div id="check-assumption" class="section level4">
-<h4>Check Assumption</h4>
-<pre class="r"><code>mydata_long %&gt;%
-  group_by(doctor) %&gt;%
-  identify_outliers(nas_score)</code></pre>
-<pre><code>## # A tibble: 7 x 5
-##   doctor  id    nas_score is.outlier is.extreme
-##   &lt;fct&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     
-## 1 doctor2 19            3 TRUE       FALSE     
-## 2 doctor2 27            3 TRUE       FALSE     
-## 3 doctor2 28            3 TRUE       FALSE     
-## 4 doctor2 29            8 TRUE       FALSE     
-## 5 doctor3 9             3 TRUE       FALSE     
-## 6 doctor3 17            8 TRUE       FALSE     
-## 7 doctor3 31            8 TRUE       FALSE</code></pre>
-<pre class="r"><code>mydata_long %&gt;%
-  group_by(doctor) %&gt;%
-  shapiro_test(nas_score)</code></pre>
-<pre><code>## # A tibble: 4 x 4
-##   doctor  variable  statistic       p
-##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;
-## 1 doctor1 nas_score     0.906 0.00286
-## 2 doctor2 nas_score     0.916 0.00597
-## 3 doctor3 nas_score     0.930 0.0156 
-## 4 doctor4 nas_score     0.928 0.0144</code></pre>
-</div>
-<div id="test" class="section level4">
-<h4>Test</h4>
-<pre class="r"><code>res.aov &lt;- anova_test(data = mydata_long, dv = nas_score, wid = id, within = doctor)
-get_anova_table(res.aov)</code></pre>
-<pre><code>## ANOVA Table (type III tests)
-## 
-##   Effect DFn DFd     F     p p&lt;.05   ges
-## 1 doctor   3 117 1.266 0.289       0.024</code></pre>
-<pre class="r"><code>### pairwise comparisons
-pwc &lt;- mydata_long %&gt;%
-  pairwise_t_test(
-    nas_score ~ doctor, paired = TRUE,
-    p.adjust.method = &quot;bonferroni&quot;
-    )
-pwc</code></pre>
-<pre><code>## # A tibble: 6 x 10
-##   .y.       group1  group2     n1    n2 statistic    df     p p.adj p.adj.signif
-## * &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       
-## 1 nas_score doctor1 doctor2    40    40     0.446    39 0.658 1     ns          
-## 2 nas_score doctor1 doctor3    40    40    -0.567    39 0.574 1     ns          
-## 3 nas_score doctor1 doctor4    40    40     1.07     39 0.291 1     ns          
-## 4 nas_score doctor2 doctor3    40    40    -1.16     39 0.254 1     ns          
-## 5 nas_score doctor2 doctor4    40    40     0.942    39 0.352 1     ns          
-## 6 nas_score doctor3 doctor4    40    40     2.13     39 0.04  0.238 ns</code></pre>
-</div>
-</div>
-<div id="visualization" class="section level3">
-<h3>Visualization</h3>
-<pre class="r"><code>pwc &lt;- pwc %&gt;% add_xy_position(x = &quot;doctor&quot;)
-
-bxp &lt;- ggboxplot(mydata_long , x = &quot;doctor&quot;, y = &quot;nas_score&quot;, add = &quot;point&quot;)
-bxp+
-  labs(
-    subtitle = get_test_label(res.aov, detailed = TRUE),
-    caption = get_pwc_label(pwc)
-  )</code></pre>
-<p><img src="NAS_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+print(fibonacci_vec)</code></pre>
+<pre><code>##  [1]  1  1  2  3  5  8 13 21 34 55</code></pre>
 </div>
 
 
