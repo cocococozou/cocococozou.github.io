@@ -25,7 +25,6 @@ The projects I've done not only include clinical trail analysis, but also includ
 
 [Movie Recommendation System](movie_recommendation.html)
 
-why?!!!
 
 
 ###Resume
