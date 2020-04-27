@@ -367,21 +367,21 @@ mydata_long &lt;- mydata %&gt;%
 <pre><code>## # A tibble: 5 x 5
 ##   doctor  id    nas_score is.outlier is.extreme
 ##   &lt;fct&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     
-## 1 doctor1 1             8 TRUE       FALSE     
-## 2 doctor1 2             8 TRUE       FALSE     
-## 3 doctor1 29            8 TRUE       FALSE     
-## 4 doctor4 13            8 TRUE       FALSE     
-## 5 doctor4 38            8 TRUE       FALSE</code></pre>
+## 1 doctor1 10            3 TRUE       FALSE     
+## 2 doctor4 1             3 TRUE       FALSE     
+## 3 doctor4 7             8 TRUE       FALSE     
+## 4 doctor4 17            8 TRUE       FALSE     
+## 5 doctor4 26            8 TRUE       FALSE</code></pre>
 <pre class="r"><code>mydata_long %&gt;%
   group_by(doctor) %&gt;%
   shapiro_test(nas_score)</code></pre>
 <pre><code>## # A tibble: 4 x 4
-##   doctor  variable  statistic      p
-##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;
-## 1 doctor1 nas_score     0.930 0.0160
-## 2 doctor2 nas_score     0.924 0.0107
-## 3 doctor3 nas_score     0.936 0.0255
-## 4 doctor4 nas_score     0.939 0.0330</code></pre>
+##   doctor  variable  statistic       p
+##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;
+## 1 doctor1 nas_score     0.930 0.0156 
+## 2 doctor2 nas_score     0.940 0.0358 
+## 3 doctor3 nas_score     0.941 0.0374 
+## 4 doctor4 nas_score     0.923 0.00974</code></pre>
 </div>
 <div id="test" class="section level4">
 <h4>Test</h4>
@@ -390,7 +390,7 @@ get_anova_table(res.aov)</code></pre>
 <pre><code>## ANOVA Table (type III tests)
 ## 
 ##   Effect DFn DFd     F     p p&lt;.05   ges
-## 1 doctor   3 117 1.086 0.358       0.023</code></pre>
+## 1 doctor   3 117 0.127 0.944       0.003</code></pre>
 <pre class="r"><code>### pairwise comparisons
 pwc &lt;- mydata_long %&gt;%
   pairwise_t_test(
@@ -401,12 +401,12 @@ pwc</code></pre>
 <pre><code>## # A tibble: 6 x 10
 ##   .y.       group1  group2     n1    n2 statistic    df     p p.adj p.adj.signif
 ## * &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       
-## 1 nas_score doctor1 doctor2    40    40    -1.12     39 0.268 1     ns          
-## 2 nas_score doctor1 doctor3    40    40     0.524    39 0.603 1     ns          
-## 3 nas_score doctor1 doctor4    40    40    -0.206    39 0.838 1     ns          
-## 4 nas_score doctor2 doctor3    40    40     1.98     39 0.054 0.326 ns          
-## 5 nas_score doctor2 doctor4    40    40     1.06     39 0.295 1     ns          
-## 6 nas_score doctor3 doctor4    40    40    -0.944    39 0.351 1     ns</code></pre>
+## 1 nas_score doctor1 doctor2    40    40   -0.146     39 0.885     1 ns          
+## 2 nas_score doctor1 doctor3    40    40   -0.461     39 0.647     1 ns          
+## 3 nas_score doctor1 doctor4    40    40    0.0869    39 0.931     1 ns          
+## 4 nas_score doctor2 doctor3    40    40   -0.285     39 0.777     1 ns          
+## 5 nas_score doctor2 doctor4    40    40    0.318     39 0.752     1 ns          
+## 6 nas_score doctor3 doctor4    40    40    0.611     39 0.544     1 ns</code></pre>
 </div>
 </div>
 <div id="visualization" class="section level3">
