@@ -35,17 +35,17 @@ Single cell RNA sequencing was performed in cells from Rat that treated with coc
 
 Quality control was first performed to avoid technical noise, which may obscure the biological information of downstream analysis.
 
-* Remove cells that had a total counts of RNA molecules smaller than 2000, a total number of unique genes smaller than 1000, or the percent of mitochondria genes larger than 15% were removed.
+* Remove cells that had a total counts of RNA molecules smaller than 2000, a total number of unique genes smaller than 1000, and the cells with percent of mitochondria genes larger than 15% were removed.
 
 * Remove mitochondrial genes and genes that shared ribosomal protein name according the RGD Genome database
 
 #####Clustering
 
-The after-QC cells were then clustered based on the SC3 algorithm. Silhouette Index were calculated by SC3 algorithm with a number of cluster K ranging from four to nine. Five clusters were determined with a relatively largest Silhouette Index. 
+The after-QC cells were then clustered based on the SC3 algorithm. Silhouette Index were calculated by SC3 algorithm with a number of cluster K ranging from four to nine. Five clusters were determined with a largest Silhouette Index. 
 
 #####Differential Analysis
 
-Then hurdle model was applied to each cell type to quantify the significant change of stimulation, treatment and interaction, shown in the following equation. 
+Then the hurdle model was applied to each cell type to quantify the significant change of stimulation, treatment and interaction, shown in the following equation. 
 
 
 $$
@@ -56,7 +56,7 @@ $$
 #####Visualization Tools
 
 
-Rank–rank hypergeometric overlap graphical maps(RRHO), heatmaps of significant genes of four cell types, and Gene Ontology terms plots were used to visualize the results. 
+Rank–rank hypergeometric overlap graphical maps(RRHO) and Gene Ontology terms plots were used to visualize the results. 
 
 ### What have I found? 
 
