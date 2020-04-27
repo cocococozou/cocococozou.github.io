@@ -364,28 +364,24 @@ mydata_long &lt;- mydata %&gt;%
 <pre class="r"><code>mydata_long %&gt;%
   group_by(doctor) %&gt;%
   identify_outliers(nas_score)</code></pre>
-<pre><code>## # A tibble: 9 x 5
+<pre><code>## # A tibble: 5 x 5
 ##   doctor  id    nas_score is.outlier is.extreme
 ##   &lt;fct&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     
-## 1 doctor1 5             3 TRUE       FALSE     
-## 2 doctor1 7             3 TRUE       FALSE     
-## 3 doctor1 19            3 TRUE       FALSE     
-## 4 doctor1 27            3 TRUE       FALSE     
-## 5 doctor3 5             3 TRUE       FALSE     
-## 6 doctor3 10            8 TRUE       FALSE     
-## 7 doctor3 23            8 TRUE       FALSE     
-## 8 doctor3 28            3 TRUE       FALSE     
-## 9 doctor3 39            3 TRUE       FALSE</code></pre>
+## 1 doctor1 1             8 TRUE       FALSE     
+## 2 doctor1 2             8 TRUE       FALSE     
+## 3 doctor1 29            8 TRUE       FALSE     
+## 4 doctor4 13            8 TRUE       FALSE     
+## 5 doctor4 38            8 TRUE       FALSE</code></pre>
 <pre class="r"><code>mydata_long %&gt;%
   group_by(doctor) %&gt;%
   shapiro_test(nas_score)</code></pre>
 <pre><code>## # A tibble: 4 x 4
-##   doctor  variable  statistic       p
-##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;
-## 1 doctor1 nas_score     0.904 0.00247
-## 2 doctor2 nas_score     0.906 0.00280
-## 3 doctor3 nas_score     0.922 0.00917
-## 4 doctor4 nas_score     0.935 0.0236</code></pre>
+##   doctor  variable  statistic      p
+##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;
+## 1 doctor1 nas_score     0.930 0.0160
+## 2 doctor2 nas_score     0.924 0.0107
+## 3 doctor3 nas_score     0.936 0.0255
+## 4 doctor4 nas_score     0.939 0.0330</code></pre>
 </div>
 <div id="test" class="section level4">
 <h4>Test</h4>
@@ -394,7 +390,7 @@ get_anova_table(res.aov)</code></pre>
 <pre><code>## ANOVA Table (type III tests)
 ## 
 ##   Effect DFn DFd     F     p p&lt;.05   ges
-## 1 doctor   3 117 0.638 0.592       0.012</code></pre>
+## 1 doctor   3 117 1.086 0.358       0.023</code></pre>
 <pre class="r"><code>### pairwise comparisons
 pwc &lt;- mydata_long %&gt;%
   pairwise_t_test(
@@ -405,12 +401,12 @@ pwc</code></pre>
 <pre><code>## # A tibble: 6 x 10
 ##   .y.       group1  group2     n1    n2 statistic    df     p p.adj p.adj.signif
 ## * &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       
-## 1 nas_score doctor1 doctor2    40    40     0.601    39 0.551     1 ns          
-## 2 nas_score doctor1 doctor3    40    40    -0.227    39 0.822     1 ns          
-## 3 nas_score doctor1 doctor4    40    40    -0.748    39 0.459     1 ns          
-## 4 nas_score doctor2 doctor3    40    40    -0.692    39 0.493     1 ns          
-## 5 nas_score doctor2 doctor4    40    40    -1.26     39 0.214     1 ns          
-## 6 nas_score doctor3 doctor4    40    40    -0.632    39 0.531     1 ns</code></pre>
+## 1 nas_score doctor1 doctor2    40    40    -1.12     39 0.268 1     ns          
+## 2 nas_score doctor1 doctor3    40    40     0.524    39 0.603 1     ns          
+## 3 nas_score doctor1 doctor4    40    40    -0.206    39 0.838 1     ns          
+## 4 nas_score doctor2 doctor3    40    40     1.98     39 0.054 0.326 ns          
+## 5 nas_score doctor2 doctor4    40    40     1.06     39 0.295 1     ns          
+## 6 nas_score doctor3 doctor4    40    40    -0.944    39 0.351 1     ns</code></pre>
 </div>
 </div>
 <div id="visualization" class="section level3">

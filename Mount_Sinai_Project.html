@@ -389,16 +389,35 @@ div.tocify {
 
 <div id="why-am-i-doing-this" class="section level3">
 <h3>Why am I doing this?</h3>
-<p>Next-generation sequencing (NGS) technologies has provided inspiring results of complex biological systems. Single cell RNA analysis, focusing on the characterization of individual sells, could allow researchers to explore potentially new and unpredicted effects of various factors on subjects.</p>
-<p>Single cell RNA sequencing was performed in NAc from Rat that treated with cocaine or saline self-administration and then followed with cocaine or saline challenge. The goal of this project is to quantify cocaine-induced cell-type specific gene expression changes.</p>
+<p>Next-generation sequencing (NGS) technologies have provided inspiring results of complex biological systems. Single cell RNA analysis, focusing on the characterization of individual sells, could allow researchers to explore potentially new and unpredicted effects of various factors on subjects.</p>
+<p>Single cell RNA sequencing was performed in cells from Rat that treated with cocaine or saline self-administration and then followed with cocaine or saline challenge. The goal of this project is to quantify cocaine-induced cell-type specific gene expression changes.</p>
 <p><img src="images/ngs1.jpg" style="width:50%"><img src="images/ngs2.png" style="width:50%"></p>
 </div>
 <div id="what-have-i-done" class="section level3">
 <h3>What Have I done?</h3>
-<p>Quality control was first performed to avoid technical noise, which may obscure the biological information of downstream analysis. The after-QC cells were then clustered based on the SC3 algorithm. Three cell types were identified: Microglia, Neuron and Oligodendrocyte by cross overlapping with the data from Top 50 Cell Type-Specific Genes provided by Gokce. Then hurdle model was applied to each cell type to quantify the significant change of stimulation, treatment and interaction, shown in the following equation. Rank–rank hypergeometric overlap graphical maps(RRHO), heatmaps of significant genes of four cell types, and Gene Ontology terms plots were used to visualize the results.</p>
+<div id="quality-control" class="section level5">
+<h5>Quality Control</h5>
+<p>Quality control was first performed to avoid technical noise, which may obscure the biological information of downstream analysis.</p>
+<ul>
+<li><p>Remove cells that had a total counts of RNA molecules smaller than 2000, a total number of unique genes smaller than 1000, or the percent of mitochondria genes larger than 15% were removed.</p></li>
+<li><p>Remove mitochondrial genes and genes that shared ribosomal protein name according the RGD Genome database</p></li>
+</ul>
+</div>
+<div id="clustering" class="section level5">
+<h5>Clustering</h5>
+<p>The after-QC cells were then clustered based on the SC3 algorithm. Silhouette Index were calculated by SC3 algorithm with a number of cluster K ranging from four to nine. Five clusters were determined with a relatively largest Silhouette Index.</p>
+</div>
+<div id="differential-analysis" class="section level5">
+<h5>Differential Analysis</h5>
+<p>Then hurdle model was applied to each cell type to quantify the significant change of stimulation, treatment and interaction, shown in the following equation.</p>
 <p><span class="math display">\[
 log(exp counts) = cngeneson+stimulation+treatment+treatment*stimulation
 \]</span></p>
+</div>
+<div id="visualization-tools" class="section level5">
+<h5>Visualization Tools</h5>
+<p>Rank–rank hypergeometric overlap graphical maps(RRHO), heatmaps of significant genes of four cell types, and Gene Ontology terms plots were used to visualize the results.</p>
+</div>
 </div>
 <div id="what-have-i-found" class="section level3">
 <h3>What have I found?</h3>
@@ -410,7 +429,8 @@ log(exp counts) = cngeneson+stimulation+treatment+treatment*stimulation
 <div id="rrho" class="section level4">
 <h4>RRHO</h4>
 <p>The rank-rank overlap analysis showed that there was strong correlation at the down - down regulated differential genes between oligodendrocyte and microglia for the stimulation and treatment term. Furthermore, for the interaction term there exist a strong consistency at the up – up regulated differential genes. There is no significant consistency showing between oligodendrocyte and microglia with neuron.</p>
-<p><img src="images/RRHO1.png" style="width:33%"><img src="images/RRHO1.png" style="width:33%"><img src="images/RRHO3.png" style="width:33%"></p>
+<p><img src="images/RRHO1.png" style="width:33%"><img src="images/RRHO2.png" style="width:33%"><img src="images/RRHO3.png" style="width:33%"></p>
+<p>The RRHO plot of interaction(1), stimulation(2), treatment(3) between Microglia, Neuron, and Oligodendrocyte pair wisely</p>
 </div>
 <div id="gene-ontology" class="section level4">
 <h4>Gene Ontology</h4>
