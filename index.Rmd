@@ -15,9 +15,9 @@ I am a qualified statistical programmer candidate with extensive understanding o
 
 I've completed numbers of academic projects related to clinical trails, including 
 
-[Gene Expression Changes Among Brain Cells of Mice](Mount_Sinai_Project.html)
+[Gene Expression Changes Among Brain Cells of Rats](Mount_Sinai_Project.html)
 
-[The study the incident rate of TB among Type II diabetes patients](https://cocococozou.github.io/dmvstb.github.io/)
+[The study of the incident rate of TB among Type II diabetes patients](https://cocococozou.github.io/dmvstb.github.io/)
 
 [NAS score accuracy](NAS.html) 
 

@@ -23,7 +23,7 @@ library("vembedr")
 ### Why am I doing this? 
 
 In product/service selling companies, a good recommendation system would significantly increase the user experience, improve customer retention and therefore increase the revenue. 
-Kaggle posted an ensemble of data collected from TMDB, GroupLens and MovieLens in order to narrate the history and the story of Cinema and use this metadata to build various types of Recommendation Systems 
+Kaggle posted an ensemble of data collected from TMDB, GroupLens and MovieLens in order to narrate the history.
 Our goal is to build a recommendation model based on that, and recommend personalized films for each user based on their previous activities. 
 
 ###What Have I done?
