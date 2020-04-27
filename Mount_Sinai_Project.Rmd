@@ -84,5 +84,5 @@ For Microglia, the top five gene ontology terms include: mRNA processing, regula
 
 <img src="./images/GO1.png" style="width:33%"><img src="./images/GO1.png" style="width:33%"><img src="./images/GO3.png" style="width:33%">
 
-**Figure 3**: The RRHO plot of interaction(a), stimulation(b), treatment(c) between Microglia, Neuron, and Oligodendrocyte pair wisely. 
+**Figure 3**: The top five significant GO terms of interaction term for Microglia(1), Neuron(2) and Oligodendrocyte(3). 
 
