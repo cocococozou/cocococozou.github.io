@@ -28,12 +28,12 @@ Our goal is to build a recommendation model based on that, and recommend persona
 
 ###What Have I done?
 
-<img src="./images/moviedata.pdf" style="width:70%">
+<img src="./images/moviedata.jpg" style="width:70%">
 
-<img src="./images/pipeline.pdf" style="width:70%">
+<img src="./images/pipeline.jpg" style="width:70%">
 
-<img src="./images/model.pdf" style="width:70%"> 
+<img src="./images/model.jpg" style="width:70%"> 
 
 ###What Do I create?
 
-<img src="./images/interface.pdf" style="width:70%">
+<img src="./images/interface.jpg" style="width:70%">

@@ -317,7 +317,7 @@ $(document).ready(function () {
 <div id="background" class="section level4">
 <h4>Background</h4>
 <p>Nonalcoholic fatty liver disease(NAFLD) is characterized by hepatic steatosis in the absence of a history of significant alcohol use or other known liver disease. Nonalcoholic steatohepatitis (NASH) is the progressive form of NAFLD.</p>
-<p><img src="images/NAS_component.pdf" style="width:100%"></p>
+<p><img src="images/NAS_component.jpg" style="width:100%"></p>
 </div>
 <div id="research-question" class="section level3">
 <h3>Research Question</h3>
@@ -367,19 +367,19 @@ mydata_long &lt;- mydata %&gt;%
 <pre><code>## # A tibble: 3 x 5
 ##   doctor  id    nas_score is.outlier is.extreme
 ##   &lt;fct&gt;   &lt;fct&gt;     &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     
-## 1 doctor2 18            3 TRUE       FALSE     
-## 2 doctor2 25            3 TRUE       FALSE     
-## 3 doctor4 10            3 TRUE       FALSE</code></pre>
+## 1 doctor2 21            8 TRUE       FALSE     
+## 2 doctor2 23            3 TRUE       FALSE     
+## 3 doctor2 26            8 TRUE       FALSE</code></pre>
 <pre class="r"><code>mydata_long %&gt;%
   group_by(doctor) %&gt;%
   shapiro_test(nas_score)</code></pre>
 <pre><code>## # A tibble: 4 x 4
-##   doctor  variable  statistic         p
-##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;
-## 1 doctor1 nas_score     0.914 0.00491  
-## 2 doctor2 nas_score     0.826 0.0000252
-## 3 doctor3 nas_score     0.927 0.0126   
-## 4 doctor4 nas_score     0.928 0.0143</code></pre>
+##   doctor  variable  statistic        p
+##   &lt;fct&gt;   &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+## 1 doctor1 nas_score     0.897 0.00159 
+## 2 doctor2 nas_score     0.888 0.000891
+## 3 doctor3 nas_score     0.921 0.00811 
+## 4 doctor4 nas_score     0.900 0.00195</code></pre>
 </div>
 <div id="test" class="section level4">
 <h4>Test</h4>
@@ -388,7 +388,7 @@ get_anova_table(res.aov)</code></pre>
 <pre><code>## ANOVA Table (type III tests)
 ## 
 ##   Effect DFn DFd     F     p p&lt;.05   ges
-## 1 doctor   3 117 1.116 0.346       0.021</code></pre>
+## 1 doctor   3 117 2.933 0.036     * 0.051</code></pre>
 <pre class="r"><code>### pairwise comparisons
 pwc &lt;- mydata_long %&gt;%
   pairwise_t_test(
@@ -399,12 +399,12 @@ pwc</code></pre>
 <pre><code>## # A tibble: 6 x 10
 ##   .y.       group1  group2     n1    n2 statistic    df     p p.adj p.adj.signif
 ## * &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       
-## 1 nas_score doctor1 doctor2    40    40    1.80      39 0.08  0.481 ns          
-## 2 nas_score doctor1 doctor3    40    40    1.24      39 0.224 1     ns          
-## 3 nas_score doctor1 doctor4    40    40    1.60      39 0.117 0.702 ns          
-## 4 nas_score doctor2 doctor3    40    40   -0.422     39 0.675 1     ns          
-## 5 nas_score doctor2 doctor4    40    40   -0.250     39 0.804 1     ns          
-## 6 nas_score doctor3 doctor4    40    40    0.0844    39 0.933 1     ns</code></pre>
+## 1 nas_score doctor1 doctor2    40    40    -0.498    39 0.621 1     ns          
+## 2 nas_score doctor1 doctor3    40    40    -0.182    39 0.857 1     ns          
+## 3 nas_score doctor1 doctor4    40    40     2.17     39 0.036 0.215 ns          
+## 4 nas_score doctor2 doctor3    40    40     0.292    39 0.772 1     ns          
+## 5 nas_score doctor2 doctor4    40    40     2.83     39 0.007 0.044 *           
+## 6 nas_score doctor3 doctor4    40    40     2.37     39 0.023 0.136 ns</code></pre>
 </div>
 </div>
 <div id="visualization" class="section level3">

@@ -18,7 +18,7 @@ library(psych)
 Nonalcoholic fatty liver disease(NAFLD) is characterized by hepatic steatosis in the absence of a history of significant alcohol use  or other known liver disease.  Nonalcoholic steatohepatitis (NASH) is the progressive form of NAFLD. 
 
 
-<img src="./images/NAS_component.pdf" style="width:100%">
+<img src="./images/NAS_component.jpg" style="width:100%">
 
 
 ###Research Question
