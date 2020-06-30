@@ -6,4 +6,4 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<img src="./images/XIAOKECV.pdf" style="width:100%">
+<img src="./images/XIAOKECVNEW.JPG" style="width:100%">
